@@ -14,7 +14,13 @@ app.get("/", (req, res) => {
 
 app.get("/ig/:userName", (req, res) => {
   let { userName } = req.params;
-  res.render("instagram.ejs", { userName });
+  const database = require("./data.json");
+  const data = database[userName];
+  if (data) {
+    res.render("instagram.ejs", { data, userName });
+  } else {
+    res.render("error.ejs");
+  }
 });
 
 app.get("/rolldice", (req, res) => {
