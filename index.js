@@ -13,7 +13,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/rolldice", (req, res) => {
-  res.render("rolldice.ejs");
+  let diceVal = Math.floor(Math.random() * 6) + 1;
+  res.render("rolldice.ejs", { diceVal });
 });
 
 app.listen(3000, () => {
