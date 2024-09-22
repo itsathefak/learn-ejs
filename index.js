@@ -12,6 +12,10 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 
+app.get("/rolldice", (req, res) => {
+  res.render("rolldice.ejs");
+});
+
 app.listen(3000, () => {
   console.log(`Listening on Port ${port}`);
 });
