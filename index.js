@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 
+app.get("/ig/:userName", (req, res) => {
+  let { userName } = req.params;
+  res.render("instagram.ejs", { userName });
+});
+
 app.get("/rolldice", (req, res) => {
   let diceVal = Math.floor(Math.random() * 6) + 1;
   res.render("rolldice.ejs", { diceVal });
